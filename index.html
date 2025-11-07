@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passphrase Generator</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/32.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/60.png" />
+    <link rel="apple-touch-icon" sizes="70x70" href="favicon/70.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/76.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/96.png" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <h1>Passphrase Generator</h1>
+
+        <!-- Output Box -->
+        <div class="output-box">
+          <span id="passphrase">Lade...</span>
+          <button id="refresh">&#x21bb;</button>
+        </div>
+
+        <!-- Copy Button -->
+        <button id="copy-btn">Kopieren</button>
+
+        <!-- Settings -->
+        <div class="settings">
+          
+          <!-- Number of words -->
+          <label>
+            Anzahl der Wörter
+            <div class="word-count">
+              <button id="minus">-</button>
+              <span id="word-count">3</span>
+              <button id="plus">+</button>
+            </div>
+          </label>
+
+          <!-- Separator -->
+          <label>
+            Wortrennzeichen
+            <input type="text" id="separator" value="." maxlength="3" />
+          </label>
+
+          <!-- Capitalization -->
+          <label class="toggle">
+            Wortanfänge großschreiben
+            <input type="checkbox" id="capitalize" />
+          </label>
+
+          <!-- Include numbers -->
+          <label class="toggle">
+            Inklusive Zahlen
+            <input type="checkbox" id="include-numbers" />
+          </label>
+
+          <!-- Wordlist selection -->
+          <label>
+            Wortliste
+            <select id="wordlist-select">
+              <option value="de" selected>Deutsch</option>
+              <option value="en">Englisch</option>
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+
+          <!-- Custom URL field -->
+          <div class="url-input" id="custom-url-container" style="display:none;">
+            <input type="text" id="wordlist-url" placeholder="Wortliste URL eingeben" />
+          </div>
+
+          <!-- Word length -->
+          <label for="max-length">
+            Maximale Wortlänge
+            <input type="number" id="max-length" min="1" value="11" />
+          </label>
+        </div>
+      </div>
+    
+      <!-- footer -->
+      <footer id="footer">
+         <p>
+            Was this helpful? Consider 
+            <a href="https://coff.ee/tectes" target="_blank" rel="noopener noreferrer">
+            buying me a coffee ☕
+            </a>
+            | Find out more on 
+            <a href="https://github.com/tectes-code/passphrase/" target="_blank" rel="noopener noreferrer">
+            GitHub
+            </a>
+         </p>
+      </footer>
+    </div>
+    
+    <!-- include script -->
+    <script src="script.js"></script>
+  </body>
+</html>

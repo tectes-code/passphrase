@@ -1,0 +1,235 @@
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Make the footer stick to the bottom naturally */
+body {
+  background-color: #111827;
+  color: #d1d5db;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Main page wrapper takes all space above the footer */
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ===============================
+   MAIN CONTAINER
+   =============================== */
+/* Container fills remaining space but scrolls if needed */
+.container {
+  background-color: #1f2937;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1; /* pushes footer to bottom when content is short */
+}
+
+h1 {
+  text-align: center;
+  color: #f3f4f6;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* ===============================
+   OUTPUT BOX
+   =============================== */
+.output-box {
+  background-color: #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1rem;
+  overflow-x: auto;
+  word-break: break-all;
+}
+
+#refresh {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#refresh:hover {
+  color: #f3f4f6;
+}
+
+/* ===============================
+   COPY BUTTON
+   =============================== */
+#copy-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+#copy-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ===============================
+   SETTINGS SECTION
+   =============================== */
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* --- Word count buttons --- */
+.word-count {
+  display: flex;
+  align-items: center;
+}
+
+.word-count button {
+  background: #374151;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.word-count span {
+  margin: 0 0.6rem;
+  min-width: 1rem;
+  text-align: center;
+}
+
+/* --- Separator and number inputs --- */
+#separator,
+#max-length {
+  width: 60px;
+  text-align: center;
+  background: #111827;
+  color: #fff;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- Checkboxes --- */
+.toggle input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* ===============================
+   WORDLIST SELECTION + URL INPUT
+   =============================== */
+.url-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+#wordlist-select {
+  width: 100%;
+  background: #111827;
+  color: #fff;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+#wordlist-url {
+  flex: 1;
+  width: 100%;
+  background: #111827;
+  color: #fff;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+/* --- Smooth fade animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 500px) {
+  .container { padding: 1.5rem; gap: 1rem; }
+  h1 { font-size: 1.3rem; }
+  .settings label { flex-direction: column; align-items: flex-start; }
+  #separator, #wordlist-select, #wordlist-url, #max-length { width: 100%; }
+  #wordlist-url { font-size: 0.85rem; }
+  #copy-btn { font-size: 0.9rem; }
+}
+
+/* Fixed footer */
+footer {
+  position: sticky;     /* 👈 works perfectly on iOS */
+  bottom: 0;
+  background: #ffffff;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: black;
+  z-index: 10;
+}
+
+footer a {
+  color: #ff813f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
